@@ -1,0 +1,245 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context="com.momskitchen.Shipping_Address">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:src="@mipmap/ic_back" />
+
+        <TextView
+            android:id="@+id/tv_title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Shipping Address"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_20"
+            android:transitionName="main" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:gravity="center_vertical"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/ic_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:padding="@dimen/margin_6"
+                    android:src="@mipmap/icn_cart" />
+
+                <TextView
+                    android:id="@+id/cart_count"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/round_notify"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_10"
+                    />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ic_notification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/margin_10"
+                android:paddingLeft="@dimen/margin_5"
+                android:paddingRight="@dimen/margin_5"
+                android:paddingTop="@dimen/margin_10"
+                android:src="@mipmap/icn_notification" />
+
+            <!-- <ImageView
+                 android:id="@+id/ic_search"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:layout_marginRight="@dimen/margin_5"
+                 android:paddingBottom="@dimen/margin_10"
+                 android:paddingLeft="@dimen/margin_5"
+                 android:paddingRight="@dimen/margin_5"
+                 android:paddingTop="@dimen/margin_10"
+                 android:src="@mipmap/h" />
+        -->
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tv_marque"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/advirtiseColor"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="@dimen/margin_5"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_14" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/tv_marque"
+    android:layout_margin="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edt"
+            android:fontFamily="sans-serif-condensed"
+            android:hint="Name"
+            android:inputType="textPersonName"
+
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_12"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_16" />
+
+        <EditText
+            android:id="@+id/edt_address1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@drawable/bg_edt"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="left"
+            android:hint="Address 1"
+            android:inputType="textPostalAddress"
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_12"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_16" />
+
+        <EditText
+            android:id="@+id/edt_address2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@drawable/bg_edt"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="left"
+            android:hint="Address 2"
+            android:inputType="textPostalAddress"
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_12"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_16" />
+
+        <EditText
+            android:id="@+id/edt_landmark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@drawable/bg_edt"
+            android:fontFamily="sans-serif-condensed"
+            android:hint="Landmark"
+            android:inputType="textPersonName"
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_12"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_16" />
+        <EditText
+            android:id="@+id/edt_contactNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@drawable/bg_edt"
+            android:fontFamily="sans-serif-condensed"
+            android:hint="Contact No"
+            android:inputType="number"
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_12"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_16" />
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/edt_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:hint="Area"
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_12"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/bg_edt"
+            android:fontFamily="sans-serif-condensed"
+            android:textColorHint="@color/text_color"
+            android:textSize="@dimen/font_16" />
+
+
+
+
+
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_15"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_background"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_8"
+        android:paddingTop="@dimen/margin_8"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_16" />
+    </LinearLayout>
+</ScrollView>
+
+</RelativeLayout>

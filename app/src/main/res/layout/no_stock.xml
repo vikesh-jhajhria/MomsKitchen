@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_25">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sad_icon" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_15" />
+
+        <TextView
+            android:id="@+id/txt_no_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Item Recently added"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_14" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_40" />
+
+        <Button
+            android:id="@+id/btn_add_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/btn_color"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingRight="@dimen/margin_15"
+            android:text="Please Check Other"
+            android:textAllCaps="true"
+            android:textSize="@dimen/font_16"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

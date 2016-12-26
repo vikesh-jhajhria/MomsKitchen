@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+      <!--  <item
+            android:id="@+id/nav_my_address"
+            android:icon="@mipmap/icn_my_address"
+            android:title="My Address" />
+      -->  <item
+            android:id="@+id/nav_order_history"
+            android:icon="@mipmap/icn_order_history"
+            android:title="Order History" />
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@mipmap/icn_contactus"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@mipmap/icn_aboutus"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@mipmap/icn_logout"
+            android:title="Logout" />
+
+
+    </group>
+</menu>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "744882899445",
+    "firebase_url": "https://moms-kitchen-b93a4.firebaseio.com",
+    "project_id": "moms-kitchen-b93a4",
+    "storage_bucket": "moms-kitchen-b93a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744882899445:android:ceabd6da355547dd",
+        "android_client_info": {
+          "package_name": "com.momskitchen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744882899445-p5qcal6036enrokc7etht24scar1jtth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpZ0MCv5zEEkxymBY_E9TXjlkTn6RfYA4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

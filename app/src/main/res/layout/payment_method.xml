@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+      <!--  <RadioGroup
+            android:id="@+id/ragGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Credit/Debit card"
+                android:textSize="@dimen/font_18"
+                android:layout_marginLeft="20dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Cash On Delievery"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="@dimen/font_18" />
+        </RadioGroup>-->
+
+    <LinearLayout
+        android:id="@+id/linear_spice_regu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/margin_30"
+
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/rg_spyice"
+            android:layout_gravity="center_vertical"
+            android:layout_width="fill_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/rb_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online Payment"
+                android:layout_marginTop="@dimen/margin_5"
+                android:checked="true"
+                android:paddingLeft="@dimen/margin_5"
+                android:textSize="@dimen/font_18"
+              />
+
+            <RadioButton
+                android:id="@+id/rb_cod"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="@dimen/margin_5"
+                android:layout_height="wrap_content"
+                android:text="Cash On delivery"
+                android:layout_marginTop="@dimen/margin_5"
+                android:textSize="@dimen/font_18" />
+        </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+
+            android:id="@+id/linear_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/checkout_txtview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".44"
+                android:background="@color/btn_color"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Checkout"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cancle_textview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".44"
+                android:background="#c2c2c2"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_20"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>

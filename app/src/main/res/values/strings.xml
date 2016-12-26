@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">Moms Kitchen</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login_">Login_Activity</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+
+    <!--Login-->
+    <string name="username">User Name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgot">Forgot password?</string>
+    <string name="mobile">Mobile No.</string>
+    <string name="signInLater">Sign in later</string>
+    <string name="registration">Registration</string>
+    <string name="title_activity_registration">Registration</string>
+
+
+    <!--Registration-->
+    <string name="first_name">First Name</string>
+    <string name="address">Address</string>
+    <string name="last_name">Last Name</string>
+    <string name="area">Area</string>
+    <string name="dob">Date of Birth</string>
+    <string name="create_password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="landmark">Landmark</string>
+    <string name="city">City</string>
+    <string name="email">E-mail</string>
+    <string name="aniversary">Anniversary</string>
+    <string name="title_activity_home_">Home_Activity</string>
+    <string name="train_deliver">Train Delivery</string>
+    <string name="home_deliver"> Home Delivery </string>
+    <string name="pickup">Pick Up</string>
+    <string name="title_activity_product__list">Product_List</string>
+    <string name="title_activity_shipping__address">Shipping_Address</string>
+    <string name="permission_title">Allow Permission for call</string>
+    <!--city list-->
+    <string-array name="city">
+        <item>Select City</item>
+        <!-- <item>Ajmer</item>
+        <item>Alwar</item>
+        <item>Banswara</item>
+        <item>Baran</item>
+        <item>Barmer</item>
+        <item>Bharatpur</item>
+        <item>Bhilwara</item>
+        <item>Bikaner</item>
+        <item>Bundi</item>
+        <item>Chittaurgarh</item>
+        <item>Churu</item>
+        <item>Dausa</item>
+        <item>Dhaulpur</item>
+        <item>Dungarpur</item>
+        <item>Ganganagar</item>
+        <item>Hanumangarh</item>
+        <item>Jaipur</item>
+        <item>Jaisalmer</item>
+        <item>Jalor</item>
+        <item>Jhalawar</item>
+        <item>Jhunjhunun</item>-->
+        <item>Jodhpur</item>
+        <!--<item>Karauli</item>
+        <item>Kota</item>
+        <item>Nagaur</item>
+        <item>Pali</item>
+        <item>Pratapgarh</item>
+        <item>Rajsamand</item>
+        <item>Sawai Madhopur</item>
+        <item>Sikar</item>
+        <item>Sirohi</item>
+        <item>Tonk</item>
+        <item>Udaipur</item>-->
+    </string-array>
+
+    <!--State list-->
+    <string-array name="state">
+        <item>Select State</item>
+        <item>Rajasthan</item>
+    </string-array>
+
+</resources>
