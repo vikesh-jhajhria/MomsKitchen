@@ -59,13 +59,11 @@ public class ServicesActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
+        load_view();
+
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        load_view();
-    }
+
 
     public void changeUI() {
         if (((RelativeLayout) findViewById(R.id.relative_search)).isShown()) {

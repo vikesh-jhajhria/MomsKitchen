@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -30,6 +31,7 @@ public class Home_Activity extends AppCompatActivity implements View.OnClickList
     Context context = Home_Activity.this;
     NavigationView navigationView;
     AppPreferences mPrefs;
+    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,7 @@ public class Home_Activity extends AppCompatActivity implements View.OnClickList
         // ((ImageView) toolbar.findViewById(R.id.ic_search)).setOnClickListener(this);
         ((ImageView) toolbar.findViewById(R.id.ic_cart)).setOnClickListener(this);
         // mPrefs = AppPreferences.getAppPreferences(context);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawer.setDrawerListener(toggle);
@@ -97,6 +99,7 @@ public class Home_Activity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.linear_logout) {
+            drawer.closeDrawer(Gravity.LEFT);
             mPrefs.putStringValue(AppPreferences.USER_NAME, "");
             mPrefs.putStringValue(AppPreferences.MEMBER_ID, "");
             mPrefs.putStringValue(AppPreferences.U_NAME, "");
@@ -104,31 +107,19 @@ public class Home_Activity extends AppCompatActivity implements View.OnClickList
             System.exit(0);
         }
         if(v.getId() == R.id.ll_services) {
+            drawer.closeDrawer(Gravity.LEFT);
             App_Constant.Title = "Services";
             startActivity(new Intent(Home_Activity.this, ServicesActivity.class));
         }
         if(v.getId() == R.id.linear_order) {
+            drawer.closeDrawer(Gravity.LEFT);
             App_Constant.Title = "Orders";
             startActivity(new Intent(Home_Activity.this, OrderCancleActivity.class));
         }
-      /*  if (v.getId() == R.id.linear_order) {
-            DBHandler db = new DBHandler(Home_Activity.this);
-            String U_id = mPrefs.getStringValue(AppPreferences.MEMBER_ID);
-            if(U_id.equalsIgnoreCase("")){
-                Toast.makeText(Home_Activity.this,"You are not Login User",Toast.LENGTH_SHORT).show();
-            }else {
-                List<MyCart_property> shops = db.getAllProduct(U_id);
-                if (shops.size() > 0) {
-                    startActivity(new Intent(Home_Activity.this, My_Cart.class));
-                } else {
-                    Toast.makeText(Home_Activity.this, "Your cart is empty", Toast.LENGTH_SHORT).show();
-                }
-            }
-            }*/
-        // start
+
         if (v.getId() == R.id.linear_contact) {
             Log.e("contact", "in");
-
+            drawer.closeDrawer(Gravity.LEFT);
             try {
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "9929053285"));
                 startActivity(intent);
@@ -136,19 +127,17 @@ public class Home_Activity extends AppCompatActivity implements View.OnClickList
 
             }
         }
-           /* Intent callIntent = new Intent(Intent.ACTION_CALL);
-            callIntent.setData(Uri.parse("tel:" + "9929053285"));
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                return;
-            }
-            startActivity(callIntent);
-*/
-        if (v.getId() == R.id.linear_about) {
 
+        if (v.getId() == R.id.linear_about) {
+            drawer.closeDrawer(Gravity.LEFT);
             Intent intent = new Intent(Home_Activity.this, AboutUsActivity.class);
             startActivity(intent);
         }
+        if (v.getId() == R.id.linear_locate) {
+            drawer.closeDrawer(Gravity.LEFT);
+        }
         if (v.getId() == R.id.ic_cart) {
+
             DBHandler db = new DBHandler(Home_Activity.this);
             String U_id = mPrefs.getStringValue(AppPreferences.MEMBER_ID);
             if (U_id.equalsIgnoreCase("")) {

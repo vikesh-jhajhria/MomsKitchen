@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_5"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginBottom="@dimen/margin_5"
+        android:background="@drawable/bg_edt">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:padding="8dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="@color/bg"
+            app:civ_border_width="1dp" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_cancel"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="@dimen/margin_5"
+            android:background="@drawable/bg_edt"
+            android:orientation="vertical">
+
+            <Button
+
+                android:id="@+id/txtview_delt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@color/black_de"
+                android:textSize="14dp" />
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="@dimen/margin_10"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_horizontal"
+
+                android:text="Rate"
+                android:textColor="@color/brownTextColor"
+                android:textSize="@dimen/font_16" />
+
+
+            <TextView
+                android:id="@+id/textView_price"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+
+                android:gravity="center_horizontal"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/font_16"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_toLeftOf="@id/ll_cancel"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingLeft="@dimen/margin_4"
+                android:paddingRight="@dimen/margin_4"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:id="@+id/item_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingLeft="@dimen/margin_4"
+                android:paddingRight="@dimen/margin_4"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/font_16" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_4"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/item_max_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:fontFamily="sans-serif-condensed"
+                    android:paddingLeft="@dimen/margin_4"
+                    android:paddingRight="@dimen/margin_4"
+                    android:text="Quantity"
+                    android:textColor="@color/brownTextColor"
+                    android:textSize="@dimen/font_16" />
+
+
+                <TextView
+                    android:id="@+id/item_quntity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:fontFamily="sans-serif-condensed"
+                    android:paddingLeft="@dimen/margin_4"
+                    android:paddingRight="@dimen/margin_4"
+                    android:text=""
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

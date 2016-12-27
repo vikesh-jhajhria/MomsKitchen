@@ -1,24 +1,19 @@
 package com.Adapter;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.Vo.MyCart_property;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.momskitchen.OrderCancleActivity;
 import com.momskitchen.R;
 import com.utils.App_Constant;
 import com.utils.MyProgressDialog;
@@ -48,7 +43,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.cart_item_layout, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_order_summary, parent, false);
         return new ViewHolder(view);
     }
 
@@ -65,10 +60,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         holder.txt_price.setText(list.get(position).getP_rate());
         holder.txt_title.setText(list.get(position).getP_name());
         holder.txt_quantity.setText(list.get(position).getOrder_qty());
+        holder.txt_desc.setText(list.get(position).getDesc());
         holder.txt_delet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-new GetOrderData().execute(position, list.get(position).getOrderId(),list.get(position).getClientId(),Integer.parseInt(list.get(position).getP_id()));
+                new GetOrderData().execute(position, list.get(position).getOrderId(), list.get(position).getClientId(), Integer.parseInt(list.get(position).getP_id()));
             }
         });
 
@@ -78,6 +74,7 @@ new GetOrderData().execute(position, list.get(position).getOrderId(),list.get(po
 
     class GetOrderData extends AsyncTask<Integer, Void, String> {
         int selectedIndex;
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -89,18 +86,18 @@ new GetOrderData().execute(position, list.get(position).getOrderId(),list.get(po
             selectedIndex = params[0];
             String res = null;
             JSONObject obj = null;
-            try{
+            try {
                 obj = new JSONObject();
-                obj.put("OrderId",params[1]);
-                obj.put("ClientId", ""+params[2]);
-                obj.put("ProductId", ""+params[3]);
-            }catch(Exception e){
+                obj.put("OrderId", params[1]);
+                obj.put("ClientId", "" + params[2]);
+                obj.put("ProductId", "" + params[3]);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             try {
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-                nameValuePairs.add(new BasicNameValuePair("JsonModel",""+ obj));
-                res = Utility.getJson(nameValuePairs,context, App_Constant.CARD);
+                nameValuePairs.add(new BasicNameValuePair("JsonModel", "" + obj));
+                res = Utility.getJson(nameValuePairs, context, App_Constant.CARD);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -111,7 +108,7 @@ new GetOrderData().execute(position, list.get(position).getOrderId(),list.get(po
             try {
                 if (new JSONObject(res).getString("Msg").equalsIgnoreCase("Success")) {
                     list.remove(selectedIndex);
-                    Toast.makeText(context,"Item removed successfully!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Item removed successfully!", Toast.LENGTH_SHORT).show();
                 }
                 notifyDataSetChanged();
             } catch (Exception e) {
@@ -120,6 +117,7 @@ new GetOrderData().execute(position, list.get(position).getOrderId(),list.get(po
             MyProgressDialog.close(context);
         }
     }
+
     @Override
     public int getItemCount() {
         return list.size();
@@ -127,10 +125,10 @@ new GetOrderData().execute(position, list.get(position).getOrderId(),list.get(po
 
     class ViewHolder extends RecyclerView.ViewHolder {
         public CircleImageView cir_image;
-        public TextView txt_title;
+        public TextView txt_title, txt_desc;
         public TextView txt_quantity;
         public TextView txt_price;
-        public TextView txt_delet;
+        public Button txt_delet;
 
 
         public ViewHolder(View itemView) {
@@ -139,7 +137,8 @@ new GetOrderData().execute(position, list.get(position).getOrderId(),list.get(po
             txt_title = (TextView) itemView.findViewById(R.id.item_name);
             txt_quantity = (TextView) itemView.findViewById(R.id.item_quntity);
             txt_price = (TextView) itemView.findViewById(R.id.textView_price);
-            txt_delet = (TextView) itemView.findViewById(R.id.txtview_delt);
+            txt_desc = (TextView) itemView.findViewById(R.id.item_description);
+            txt_delet = (Button) itemView.findViewById(R.id.txtview_delt);
         }
     }
 }

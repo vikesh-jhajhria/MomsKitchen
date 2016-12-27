@@ -91,6 +91,7 @@ public class OrderCancleActivity extends Activity implements View.OnClickListene
                         map.setP_id(mock_object.getString("ProductId"));
                         map.setOrderId(mock_object.getInt("OrderId"));
                         map.setClientId(mock_object.getInt("ClientId"));
+                        map.setDesc(mock_object.getString("Description"));
 
                         list.add(map);
                     }

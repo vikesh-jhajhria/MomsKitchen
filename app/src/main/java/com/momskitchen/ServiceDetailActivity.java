@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.Adapter.BrandAdapter;
+import com.Adapter.ServiceDetail_Adapter;
 import com.Vo.MyCart_property;
 import com.Vo.brandVo;
 import com.bumptech.glide.Glide;
@@ -42,7 +43,7 @@ public class ServiceDetailActivity extends AppCompatActivity implements View.OnC
 {
     private GridView grid;
     ArrayList<HashMap<String, String>> array;
-    private ProductList_Adapter adapter;
+    private ServiceDetail_Adapter adapter;
     Context context = ServiceDetailActivity.this;
     TextView product_name,title;
     ImageView productImg;
@@ -56,9 +57,10 @@ public class ServiceDetailActivity extends AppCompatActivity implements View.OnC
         mPrefs = AppPreferences.getAppPreferences(ServiceDetailActivity.this);
         grid = (GridView) findViewById(R.id.main_grid);
 
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        adapter = new ProductList_Adapter( this, array);
+        adapter = new ServiceDetail_Adapter( this, array);
         title=(TextView)findViewById(R.id.tv_title);
         ((TextView) findViewById(R.id.tv_marque)).setText("" + App_Constant.Advt_title);
         findViewById(R.id.iv_back).setOnClickListener(this);
@@ -177,7 +179,7 @@ public class ServiceDetailActivity extends AppCompatActivity implements View.OnC
                     }
                     // Log.e("dsa ",""+product_array.size());
                     //.setAdapter(new ProductList_Adapter(ServicesActivity.this, array));
-                    adapter = new ProductList_Adapter(ServiceDetailActivity.this, array);
+                    adapter = new ServiceDetail_Adapter(ServiceDetailActivity.this, array);
                     grid.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                     ((EditText) findViewById(R.id.edt_search)).addTextChangedListener(new TextWatcher() {
@@ -266,7 +268,7 @@ public class ServiceDetailActivity extends AppCompatActivity implements View.OnC
                     }
                     // Log.e("dsa ",""+product_array.size());
                     //.setAdapter(new ProductList_Adapter(ServicesActivity.this, array));
-                    adapter = new ProductList_Adapter(ServiceDetailActivity.this, array);
+                    adapter = new ServiceDetail_Adapter(ServiceDetailActivity.this, array);
                     grid.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                     ((EditText) findViewById(R.id.edt_search)).addTextChangedListener(new TextWatcher() {
